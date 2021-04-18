@@ -1,0 +1,12 @@
+.img{
+    width: 75px;
+    transition: .5s;
+    margin-bottom: 20px;
+}
+.img:hover{
+    transform: rotate(360deg);
+}
+.single-service{
+    height: 300px;
+    box-shadow: 1px 1px 20px lightgray;
+}
