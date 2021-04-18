@@ -1,13 +1,11 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AdminSidebar from '../AdminSidebar/AdminSidebar';
 // import ServiceTable from '../ServiceTable/ServiceTable';
 
 const ManageServices = () => {
     const [manageService,setManageService] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch("https://shielded-plateau-39007.herokuapp.com/services")
         .then(res => res.json())
         .then(data => {
             setManageService(data)
@@ -15,7 +13,7 @@ const ManageServices = () => {
     },[])
 
     const  handleDelete =(id) =>{
-        fetch(`http://localhost:5000/deleteService/${id}`,{
+        fetch(`https://shielded-plateau-39007.herokuapp.com/deleteService/${id}`,{
             method:"DELETE",
         })
         .then(res => res.json())

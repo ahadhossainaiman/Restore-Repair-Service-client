@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import SingleFeedback from '../SingleFeedback/SingleFeedback';
 
 const FeedBack = () => {
     const [feedback,setFeedback] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/feedback')
+        fetch("https://shielded-plateau-39007.herokuapp.com/feedback")
         .then(res => res.json())
         .then(data => {
             setFeedback(data);

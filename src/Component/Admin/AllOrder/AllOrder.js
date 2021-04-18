@@ -8,7 +8,7 @@ import OrderTable from '../OrderTable/OrderTable';
 const AllOrder = () => {
     const [allOrder,setAllOrder] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/allOrders')
+        fetch("https://shielded-plateau-39007.herokuapp.com/allOrders")
         .then(res => res.json())
         .then(data => {
             setAllOrder(data)

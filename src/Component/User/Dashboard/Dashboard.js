@@ -1,5 +1,4 @@
-import React, { useContext, useEffect } from 'react';
-import { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../../App';
 import Sidebar from '../Sidebar/Sidebar';
 import UserServices from '../UserServices/UserService';
@@ -8,7 +7,7 @@ const Dashboard = () => {
     const [userService,setUserService] = useState([]);
     const [loggedInUser,setLoggedInUser] = useContext(UserContext);
     useEffect(() => {
-        fetch('http://localhost:5000/userService?email='+loggedInUser.email)
+        fetch("https://shielded-plateau-39007.herokuapp.com/userService?email="+loggedInUser.email)
         .then(res => res.json())
         .then(data => {
             setUserService(data);

@@ -32,7 +32,7 @@ const Login = () => {
         newUser.error = '';
         setLoggedInUser(newUser);
         // history.replace(from);
-        fetch('http://localhost:5000/admin?email='+newUser.email)
+        fetch("https://shielded-plateau-39007.herokuapp.com/admin?email="+newUser.email)
             .then(res => res.json())
             .then(data => {
                 if(data){

@@ -8,7 +8,7 @@ const AddAdmin = () => {
     const history = useHistory();
     const { register, handleSubmit } = useForm();
     const onSubmit = (data) => {
-        fetch("http://localhost:5000/admin",{
+        fetch("https://shielded-plateau-39007.herokuapp.com/admin",{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

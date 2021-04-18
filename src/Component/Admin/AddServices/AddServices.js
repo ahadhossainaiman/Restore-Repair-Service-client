@@ -21,7 +21,7 @@ const AddService = () => {
 
 
 
-        fetch('http://localhost:5000/addService',{
+        fetch("https://shielded-plateau-39007.herokuapp.com/addService",{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

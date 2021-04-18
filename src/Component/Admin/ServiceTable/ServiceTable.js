@@ -4,7 +4,7 @@ const ServiceTable = (props) => {
     const { serviceName,price,imageUrl,_id,description } = props.serviceInfo;
 
     const  handleDelete =(id) =>{
-        fetch(`http://localhost:5000/deleteService/${id}`,{
+        fetch(`https://shielded-plateau-39007.herokuapp.com/deleteService/${id}`,{
             method:"DELETE",
         })
         .then(res => res.json())

@@ -1,13 +1,10 @@
-import React from 'react';
-
+import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
-import { useContext } from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { idContext, UserContext } from '../../../App';
-import Sidebar from '../Sidebar/Sidebar';
 import ProcessPayment from '../ProcessPayment/ProcessPayment';
+import Sidebar from '../Sidebar/Sidebar';
+
 
 
 const Order = () => {
@@ -17,7 +14,7 @@ const Order = () => {
     const [serviceId,setServiceId] = useContext(idContext);
     const [serviceInfo,setServiceInfo] = useState({});
     useEffect(() => {
-        fetch('http://localhost:5000/userService/'+serviceId)
+        fetch("https://shielded-plateau-39007.herokuapp.com/userService/"+serviceId)
         .then(res => res.json())
         .then(data => {
             setServiceInfo(data);
@@ -25,7 +22,7 @@ const Order = () => {
     },[serviceId]);
     const onSubmit = (data) => {
         const info = {...data,serviceName:serviceInfo.serviceName,imageUrl:serviceInfo.imageUrl,description:serviceInfo.description,price:serviceInfo.price,process: "pending"};
-        fetch('http://localhost:5000/selectedService',{
+        fetch("https://shielded-plateau-39007.herokuapp.com/selectedService",{
             method: "POST",
             headers:{
                 'content-Type': 'application/json'

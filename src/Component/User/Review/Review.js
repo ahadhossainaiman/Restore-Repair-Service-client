@@ -21,7 +21,7 @@ const Review = () => {
         imageUrl:imageUrl
     };
 
-    fetch("http://localhost:5000/yourfeedback", {
+    fetch("https://shielded-plateau-39007.herokuapp.com/yourfeedback", {
       method: "POST",
       headers: {
         "content-Type": "application/json",
